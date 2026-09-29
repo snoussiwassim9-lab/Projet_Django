@@ -1,0 +1,20 @@
+[project]
+name = "projet-initial"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "snoussiwassim9-lab", email = "263511267+snoussiwassim9-lab@users.noreply.github.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "django==5.2.*",
+    "python-dotenv>=1.2.3",
+]
+
+[project.scripts]
+projet-initial = "projet_initial:main"
+
+[build-system]
+requires = ["uv_build>=0.12.17,<0.13.0"]
+build-backend = "uv_build"
