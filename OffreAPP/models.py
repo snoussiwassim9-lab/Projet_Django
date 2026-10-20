@@ -6,9 +6,9 @@ from EntrepriseAPP.models import Entreprise
 
 # Create your models here.
 class Offre(models.Model) : 
-    prix=models.DecimalField()
+    prix=models.DecimalField(max_digits=10, decimal_places=2)
     delai_jours=models.PositiveIntegerField()
-    statut=models.CharField(max_length=50,choices=[('a','accepte')('r','refusee')],default='a')
+    statut=models.CharField(max_length=50,choices=[('a','accepte'),('r','refusee')],default='a')
     date_proposition=models.DateField(auto_now_add=True)
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
