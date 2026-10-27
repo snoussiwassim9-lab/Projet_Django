@@ -18,7 +18,7 @@ class Expedition(models.Model):
     statut=models.CharField(max_length=50,choices = [('a','annulle'),('e','encours')],default='e')
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    chargeur = models.ForeignKey(Entreprise, on_delete=models.CASCADE, related_name='expeditions')
+    entreprise = models.ForeignKey(Entreprise, on_delete=models.CASCADE, related_name='expeditions')
 
     @classmethod
     def _generate_reference(cls):
@@ -42,8 +42,8 @@ class Expedition(models.Model):
 
     def clean(self):
         super().clean()
-        if self.chargeur_id and self.chargeur.type_entreprise != 'c':
+        if self.entreprise_id and self.entreprise.type_entreprise != 'c':
             raise ValidationError({
-                'chargeur': 'Une expedition ne peut etre creee que par un chargeur'})
+                'entreprise': 'Une expedition ne peut etre creee que par un chargeur'})
     
 

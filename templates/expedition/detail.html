@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Expedition {{ expedition.reference }}</title>
+</head>
+<body>
+    <h1>Expedition {{ expedition.reference }}</h1>
+    <ul>
+        <li>Entreprise : {{ expedition.entreprise }}</li>
+        <li>Depart : {{ expedition.ville_depart }}</li>
+        <li>Arrivee : {{ expedition.ville_arrive }}</li>
+        <li>Poids : {{ expedition.poids_kg }}</li>
+        <li>Date souhaitee : {{ expedition.date_souhaitee }}</li>
+        <li>Statut : {{ expedition.get_statut_display }}</li>
+        <li>Description : {{ expedition.description }}</li>
+    </ul>
+    <a href="{% url 'list' %}">Back to list</a>
+</body>
+</html>

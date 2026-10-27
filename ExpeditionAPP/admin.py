@@ -21,18 +21,18 @@ class EnRetardFilter(admin.SimpleListFilter):
 
 @admin.register(Expedition)
 class ExpeditionAdmin(admin.ModelAdmin):
-    list_display = ('reference', 'chargeur', 'ville_depart', 'ville_arrive', 'statut', 'date_souhaitee')
+    list_display = ('reference', 'entreprise', 'ville_depart', 'ville_arrive', 'statut', 'date_souhaitee')
     list_filter = ('statut', 'ville_depart', EnRetardFilter)
-    search_fields = ('reference', 'chargeur__rasion_social')
+    search_fields = ('reference', 'entreprise__rasion_social')
     list_editable = ('statut',)
     ordering = ('-created_at',)
     date_hierarchy = 'date_souhaitee'
     list_per_page = 25
 
-    autocomplete_fields = ('chargeur',)
+    autocomplete_fields = ('entreprise',)
     readonly_fields = ('reference', 'statut_colore', 'created_at', 'updated_at')
     fieldsets = (
-        ("Details de l'expedition", {'fields': ('reference', 'chargeur', 'ville_depart', 'ville_arrive')}),
+        ("Details de l'expedition", {'fields': ('reference', 'entreprise', 'ville_depart', 'ville_arrive')}),
         ('Caracteristiques', {'fields': ('poids_kg', 'date_souhaitee', 'description')}),
         ('Suivi', {'fields': ('statut_colore', 'statut', 'created_at', 'updated_at')}),
     )
