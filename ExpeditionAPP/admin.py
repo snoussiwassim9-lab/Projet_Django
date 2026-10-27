@@ -42,6 +42,7 @@ class ExpeditionAdmin(admin.ModelAdmin):
         couleurs = {
             'a': '#D9534F',
             'e': '#5CB85C',
+            'p': '#F0AD4E',
         }
         return format_html(
             '<span style="color:white;background:{};padding:3px 8px;border-radius:4px;">{}</span>',

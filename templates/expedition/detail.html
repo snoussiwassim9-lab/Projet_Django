@@ -15,6 +15,7 @@
         <li>Statut : {{ expedition.get_statut_display }}</li>
         <li>Description : {{ expedition.description }}</li>
     </ul>
-    <a href="{% url 'list' %}">Back to list</a>
+    <a href="{% url 'list' %}">Back to list</a> |
+    <a href="{% url 'delete' expedition.id %}">Delete</a>
 </body>
 </html>

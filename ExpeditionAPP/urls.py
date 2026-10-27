@@ -1,4 +1,4 @@
-from .views import home, welcome, listExpeditions, detailExpedition
+from .views import home, welcome, listExpeditions, detailExpedition, deleteExpedition
 from django.urls import path
 
 urlpatterns = [
@@ -6,4 +6,5 @@ urlpatterns = [
     path('w/<str:name>/', welcome, name="welcomeFunction"),
     path('list/',listExpeditions,name="list"),
     path('detail/<int:id>/', detailExpedition, name="detail"),
+    path('delete/<int:id>/', deleteExpedition, name="delete"),
 ]

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete {{ expedition.reference }}</title>
+</head>
+<body>
+    <h1>Delete expedition {{ expedition.reference }} ?</h1>
+    <p>{{ expedition.ville_depart }} - {{ expedition.ville_arrive }} ({{ expedition.entreprise }})</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, delete</button>
+        <a href="{% url 'detail' expedition.id %}">Cancel</a>
+    </form>
+</body>
+</html>
